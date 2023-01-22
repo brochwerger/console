@@ -1,0 +1,6 @@
+FROM quay.io/brochwer/console
+
+RUN apk update && \
+    apk add stress-ng
+
+CMD tail -f /dev/null
