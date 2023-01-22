@@ -1,0 +1,7 @@
+FROM registry.access.redhat.com/ubi8/ubi
+
+RUN dnf update -y && \
+    dnf install -y bind-utils iputils net-tools iproute
+#    dnf install -y bind-utils iputils net-tools traceroute iproute
+
+CMD tail -f /dev/null
