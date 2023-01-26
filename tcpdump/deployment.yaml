@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tcpdump
+  namespace: cap-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: tcpdump
+  template:
+    metadata:
+      labels:
+        name: tcpdump
+    spec:
+      containers:
+        - name: tcpdump
+          image: quay.io/brochwer/tcpdump
+          imagePullPolicy: Always
+          securityContext:
+            capabilities:
+                add: ["NET_RAW"]
+            runAsUser: 72
+            runAsGroup: 72
+            runAsNonRoot: true
+            allowHostNetwork: true

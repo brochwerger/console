@@ -1,0 +1,9 @@
+# FROM quay.io/brochwer/console:ubi8
+FROM quay.io/centos/centos:stream8
+
+RUN dnf update -y && \
+    dnf install -y tcpdump
+
+#RUN setcap 'cap_net_raw+pe' /usr/sbin/tcpdump
+
+CMD tail -f /dev/null
