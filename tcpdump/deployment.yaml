@@ -23,4 +23,3 @@ spec:
             runAsUser: 72
             runAsGroup: 72
             runAsNonRoot: true
-            allowHostNetwork: true
