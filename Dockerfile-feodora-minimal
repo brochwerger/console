@@ -1,0 +1,8 @@
+FROM registry.fedoraproject.org/fedora-minimal:38
+
+RUN microdnf update -y && \
+    microdnf install -y bind-utils iputils net-tools iproute && \
+    microdnf clean all
+#    dnf install -y bind-utils iputils net-tools traceroute iproute
+
+CMD tail -f /dev/null
